@@ -1,0 +1,5 @@
+﻿file_name,table_name,rows,columns
+clients.csv,clients,5000,5
+products.csv,products,120,6
+orders.csv,orders,13553,6
+order_items.csv,order_items,19488,6

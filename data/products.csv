@@ -1,0 +1,121 @@
+﻿product_id,product_name,category,subcategory,standard_cost,list_price
+P001,Fone Bluetooth 01,Eletrônicos,Áudio,149.04,299.19
+P002,Caixa de Som 02,Eletrônicos,Informática,1501.95,2450.77
+P003,Monitor 03,Eletrônicos,Celulares,656.94,1223.68
+P004,Teclado Mecânico 04,Eletrônicos,Acessórios,930.75,1785.22
+P005,Mouse Gamer 05,Eletrônicos,Áudio,1334.11,2127.88
+P006,Webcam 06,Eletrônicos,Informática,1138.43,1943.33
+P007,Headset 07,Eletrônicos,Celulares,296.39,553.09
+P008,SSD 08,Eletrônicos,Acessórios,1075.55,1852.99
+P009,Hub USB 09,Eletrônicos,Áudio,84.49,117.78
+P010,Carregador 10,Eletrônicos,Informática,598.31,1149.01
+P011,Fone Bluetooth 11,Eletrônicos,Celulares,769.32,1300.28
+P012,Caixa de Som 12,Eletrônicos,Acessórios,1368.42,2239.31
+P013,Monitor 13,Eletrônicos,Áudio,361.44,560.0
+P014,Teclado Mecânico 14,Eletrônicos,Informática,166.32,230.12
+P015,Mouse Gamer 15,Eletrônicos,Celulares,744.48,1180.58
+P016,Webcam 16,Eletrônicos,Acessórios,977.47,1430.74
+P017,Headset 17,Eletrônicos,Áudio,870.34,1883.4
+P018,SSD 18,Eletrônicos,Informática,1301.42,1785.42
+P019,Hub USB 19,Eletrônicos,Celulares,1438.2,2106.95
+P020,Carregador 20,Eletrônicos,Acessórios,367.12,512.99
+P021,Panela Antiaderente 01,Casa,Cozinha,202.97,349.78
+P022,Jogo de Toalhas 02,Casa,Organização,252.3,390.81
+P023,Organizador Multiuso 03,Casa,Decoração,128.74,275.63
+P024,Luminária 04,Casa,Utilidades,99.14,185.51
+P025,Kit de Potes 05,Casa,Cozinha,333.51,469.06
+P026,Cafeteira 06,Casa,Organização,84.6,167.63
+P027,Garrafa Térmica 07,Casa,Decoração,384.38,629.5
+P028,Almofada Decorativa 08,Casa,Utilidades,408.43,631.17
+P029,Tábua de Corte 09,Casa,Cozinha,111.8,188.55
+P030,Aspirador Portátil 10,Casa,Organização,154.04,207.54
+P031,Panela Antiaderente 11,Casa,Decoração,285.95,430.91
+P032,Jogo de Toalhas 12,Casa,Utilidades,100.07,195.38
+P033,Organizador Multiuso 13,Casa,Cozinha,52.43,115.92
+P034,Luminária 14,Casa,Organização,343.61,691.22
+P035,Kit de Potes 15,Casa,Decoração,386.44,592.06
+P036,Cafeteira 16,Casa,Utilidades,178.18,250.36
+P037,Garrafa Térmica 17,Casa,Cozinha,21.29,37.59
+P038,Almofada Decorativa 18,Casa,Organização,154.4,208.52
+P039,Tábua de Corte 19,Casa,Decoração,175.08,369.08
+P040,Aspirador Portátil 20,Casa,Utilidades,166.85,327.6
+P041,Camiseta Básica 01,Moda,Roupas,53.87,105.28
+P042,Calça Jeans 02,Moda,Calçados,119.72,193.5
+P043,Tênis Casual 03,Moda,Acessórios,74.43,133.22
+P044,Jaqueta 04,Moda,Esportivo,221.86,329.84
+P045,Moletom 05,Moda,Roupas,215.23,317.76
+P046,Bermuda 06,Moda,Calçados,197.55,272.4
+P047,Vestido 07,Moda,Acessórios,202.0,308.25
+P048,Sandália 08,Moda,Esportivo,298.12,509.56
+P049,Boné 09,Moda,Roupas,38.94,78.89
+P050,Mochila 10,Moda,Calçados,144.15,245.38
+P051,Camiseta Básica 11,Moda,Acessórios,96.03,196.38
+P052,Calça Jeans 12,Moda,Esportivo,86.72,118.83
+P053,Tênis Casual 13,Moda,Roupas,41.75,85.99
+P054,Jaqueta 14,Moda,Calçados,80.07,151.22
+P055,Moletom 15,Moda,Acessórios,265.84,469.53
+P056,Bermuda 16,Moda,Esportivo,257.7,373.34
+P057,Vestido 17,Moda,Roupas,111.49,210.04
+P058,Sandália 18,Moda,Calçados,301.06,584.01
+P059,Boné 19,Moda,Acessórios,94.64,163.87
+P060,Mochila 20,Moda,Esportivo,177.75,257.66
+P061,Colchonete 01,Esportes,Fitness,42.47,82.38
+P062,Corda de Pular 02,Esportes,Corrida,1073.74,1468.24
+P063,Halter 03,Esportes,Camping,102.26,222.44
+P064,Garrafa Esportiva 04,Esportes,Ciclismo,336.41,546.88
+P065,Tênis de Corrida 05,Esportes,Fitness,613.84,1051.36
+P066,Mochila de Trilha 06,Esportes,Corrida,266.15,472.3
+P067,Barraca 07,Esportes,Camping,547.59,926.9
+P068,Lanterna 08,Esportes,Ciclismo,654.35,1162.72
+P069,Capacete de Ciclismo 09,Esportes,Fitness,840.62,1406.02
+P070,Bicicleta 10,Esportes,Corrida,28.36,53.67
+P071,Colchonete 11,Esportes,Camping,344.86,722.65
+P072,Corda de Pular 12,Esportes,Ciclismo,35.63,54.96
+P073,Halter 13,Esportes,Fitness,300.19,585.33
+P074,Garrafa Esportiva 14,Esportes,Corrida,41.78,74.26
+P075,Tênis de Corrida 15,Esportes,Camping,593.88,1032.45
+P076,Mochila de Trilha 16,Esportes,Ciclismo,136.31,266.63
+P077,Barraca 17,Esportes,Fitness,27.82,47.86
+P078,Lanterna 18,Esportes,Corrida,647.88,868.76
+P079,Capacete de Ciclismo 19,Esportes,Camping,364.14,768.29
+P080,Bicicleta 20,Esportes,Ciclismo,674.18,983.83
+P081,Shampoo 01,Beleza,Cuidados pessoais,188.51,341.99
+P082,Condicionador 02,Beleza,Cabelo,65.81,115.1
+P083,Hidratante 03,Beleza,Maquiagem,121.29,245.7
+P084,Protetor Solar 04,Beleza,Perfumaria,332.81,461.51
+P085,Perfume 05,Beleza,Cuidados pessoais,200.97,286.08
+P086,Batom 06,Beleza,Cabelo,332.72,454.57
+P087,Base Facial 07,Beleza,Maquiagem,412.69,596.5
+P088,Secador 08,Beleza,Perfumaria,54.18,98.47
+P089,Escova Modeladora 09,Beleza,Cuidados pessoais,108.28,230.44
+P090,Kit de Cuidados 10,Beleza,Cabelo,95.04,176.76
+P091,Shampoo 11,Beleza,Maquiagem,160.32,235.04
+P092,Condicionador 12,Beleza,Perfumaria,393.82,638.4
+P093,Hidratante 13,Beleza,Cuidados pessoais,113.4,235.69
+P094,Protetor Solar 14,Beleza,Cabelo,186.79,355.15
+P095,Perfume 15,Beleza,Maquiagem,306.83,604.11
+P096,Batom 16,Beleza,Perfumaria,347.1,527.8
+P097,Base Facial 17,Beleza,Cuidados pessoais,212.47,316.31
+P098,Secador 18,Beleza,Cabelo,23.04,31.93
+P099,Escova Modeladora 19,Beleza,Maquiagem,102.68,159.57
+P100,Kit de Cuidados 20,Beleza,Perfumaria,185.41,298.78
+P101,Romance 01,Livros,Ficção,17.34,28.98
+P102,Livro de Negócios 02,Livros,Não ficção,148.16,216.7
+P103,Livro de História 03,Livros,Educação,125.36,168.01
+P104,Livro de Tecnologia 04,Livros,Infantil,133.86,221.79
+P105,Livro de Administração 05,Livros,Ficção,99.41,155.76
+P106,Livro Infantil 06,Livros,Não ficção,134.39,209.59
+P107,Livro de Finanças 07,Livros,Educação,143.59,227.07
+P108,Livro de Desenvolvimento 08,Livros,Infantil,20.01,43.42
+P109,Livro de Ficção 09,Livros,Ficção,112.24,171.08
+P110,Livro Educacional 10,Livros,Não ficção,27.71,53.27
+P111,Romance 11,Livros,Educação,31.76,42.6
+P112,Livro de Negócios 12,Livros,Infantil,37.67,62.06
+P113,Livro de História 13,Livros,Ficção,80.21,111.73
+P114,Livro de Tecnologia 14,Livros,Não ficção,62.0,134.6
+P115,Livro de Administração 15,Livros,Educação,52.69,91.72
+P116,Livro Infantil 16,Livros,Infantil,50.53,102.68
+P117,Livro de Finanças 17,Livros,Ficção,93.52,128.29
+P118,Livro de Desenvolvimento 18,Livros,Não ficção,48.67,78.41
+P119,Livro de Ficção 19,Livros,Educação,78.37,144.32
+P120,Livro Educacional 20,Livros,Infantil,89.64,145.8

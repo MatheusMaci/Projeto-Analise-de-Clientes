@@ -1,0 +1,24 @@
+﻿table_name,column_name,data_type,description,business_rule
+clients,customer_id,VARCHAR(10),Identificador único do cliente.,Chave primária.
+clients,signup_date,DATE,Data de cadastro do cliente.,Pode ser anterior ao período analítico.
+clients,state,CHAR(2),UF do cliente.,UF brasileira válida.
+clients,region,VARCHAR(20),Região geográfica brasileira.,Derivada da UF.
+clients,customer_segment,VARCHAR(20),Segmento comercial do cliente.,"Mass Market, Intermediário ou Premium."
+products,product_id,VARCHAR(10),Identificador único do produto.,Chave primária.
+products,product_name,VARCHAR(100),Nome comercial do produto.,Obrigatório.
+products,category,VARCHAR(50),Categoria principal.,Uma das seis categorias.
+products,subcategory,VARCHAR(50),Subcategoria do produto.,Relacionada à categoria.
+products,standard_cost,"DECIMAL(12,2)",Custo padrão do produto.,Maior que zero.
+products,list_price,"DECIMAL(12,2)",Preço de lista do produto.,Maior que zero.
+orders,order_id,VARCHAR(12),Identificador único do pedido.,Chave primária.
+orders,customer_id,VARCHAR(10),Cliente responsável pelo pedido.,FK para clients.
+orders,order_date,DATE,Data do pedido.,Entre 01/01/2023 e 31/12/2025.
+orders,order_status,VARCHAR(20),Status do pedido.,"Concluído, Cancelado ou Devolvido."
+orders,channel,VARCHAR(20),Canal utilizado na compra.,"Site, App ou Marketplace."
+orders,payment_method,VARCHAR(30),Forma de pagamento.,"Cartão, PIX, Boleto ou Carteira digital."
+order_items,order_id,VARCHAR(12),Pedido associado ao item.,FK para orders.
+order_items,product_id,VARCHAR(10),Produto associado ao item.,FK para products.
+order_items,quantity,INT,Quantidade comprada.,Maior que zero.
+order_items,unit_price,"DECIMAL(12,2)",Preço unitário praticado.,Maior que zero.
+order_items,discount,"DECIMAL(5,4)",Percentual de desconto aplicado.,Entre 0 e 15%.
+order_items,unit_cost,"DECIMAL(12,2)",Custo unitário do produto.,Maior que zero.
