@@ -8,42 +8,42 @@
 -- ============================================================
 
 SELECT
-    c.customer_id,
-    COUNT(DISTINCT o.order_id) AS total_orders,
+    t1.customer_id,
+    COUNT(DISTINCT t2.order_id) AS total_orders,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
     ) AS revenue,
 
     SUM(
-        oi.quantity
-        * oi.unit_cost
+        t3.quantity
+        * t3.unit_cost
     ) AS cost,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
         -
-        oi.quantity
-        * oi.unit_cost
+        t3.quantity
+        * t3.unit_cost
     ) AS profit,
 
-    MAX(o.order_date) AS last_purchase_date
+    MAX(t2.order_date) AS last_purchase_date
 
-FROM clients c
+FROM clients t1
 
-LEFT JOIN orders o
-    ON c.customer_id = o.customer_id
-    AND o.order_status = 'Concluído'
+LEFT JOIN orders t2
+    ON t1.customer_id = t2.customer_id
+    AND t2.order_status = 'Concluído'
 
-LEFT JOIN order_items oi
-    ON o.order_id = oi.order_id
+LEFT JOIN order_items t3
+    ON t2.order_id = t3.order_id
 
 GROUP BY
-    c.customer_id;
+    t1.customer_id;
 
 
 -- ============================================================
@@ -95,35 +95,35 @@ GROUP BY
 -- ============================================================
 
 SELECT
-    p.category,
+    t4.category,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
     ) AS revenue,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
         -
-        oi.quantity
-        * oi.unit_cost
+        t3.quantity
+        * t3.unit_cost
     ) AS profit
 
-FROM order_items oi
+FROM order_items t3
 
-INNER JOIN orders o
-    ON oi.order_id = o.order_id
+INNER JOIN orders t2
+    ON t3.order_id = t2.order_id
 
-INNER JOIN products p
-    ON oi.product_id = p.product_id
+INNER JOIN products t4
+    ON t3.product_id = t4.product_id
 
-WHERE o.order_status = 'Concluído'
+WHERE t2.order_status = 'Concluído'
 
 GROUP BY
-    p.category
+    t4.category
 
 ORDER BY
     revenue DESC;
@@ -134,23 +134,23 @@ ORDER BY
 -- ============================================================
 
 SELECT
-    c.customer_id,
-    MAX(o.order_date) AS last_purchase_date,
+    t1.customer_id,
+    MAX(t2.order_date) AS last_purchase_date,
 
     DATEDIFF(
         DAY,
-        MAX(o.order_date),
+        MAX(t2.order_date),
         '2025-12-31'
     ) AS recency_days
 
-FROM clients c
+FROM clients t1
 
-LEFT JOIN orders o
-    ON c.customer_id = o.customer_id
-    AND o.order_status = 'Concluído'
+LEFT JOIN orders t2
+    ON t1.customer_id = t2.customer_id
+    AND t2.order_status = 'Concluído'
 
 GROUP BY
-    c.customer_id;
+    t1.customer_id;
 
 
 -- ============================================================
@@ -160,17 +160,17 @@ GROUP BY
 WITH last_purchase AS (
 
     SELECT
-        c.customer_id,
-        MAX(o.order_date) AS last_purchase_date
+        t1.customer_id,
+        MAX(t2.order_date) AS last_purchase_date
 
-    FROM clients c
+    FROM clients t1
 
-    LEFT JOIN orders o
-        ON c.customer_id = o.customer_id
-        AND o.order_status = 'Concluído'
+    LEFT JOIN orders t2
+        ON t1.customer_id = t2.customer_id
+        AND t2.order_status = 'Concluído'
 
     GROUP BY
-        c.customer_id
+        t1.customer_id
 )
 
 SELECT
@@ -209,26 +209,26 @@ FROM last_purchase;
 
 SELECT TOP 20
 
-    c.customer_id,
+    t1.customer_id,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
     ) AS revenue
 
-FROM clients c
+FROM clients t1
 
-INNER JOIN orders o
-    ON c.customer_id = o.customer_id
+INNER JOIN orders t2
+    ON t1.customer_id = t2.customer_id
 
-INNER JOIN order_items oi
-    ON o.order_id = oi.order_id
+INNER JOIN order_items t3
+    ON t2.order_id = t3.order_id
 
-WHERE o.order_status = 'Concluído'
+WHERE t2.order_status = 'Concluído'
 
 GROUP BY
-    c.customer_id
+    t1.customer_id
 
 ORDER BY
     revenue DESC;
@@ -240,34 +240,34 @@ ORDER BY
 
 SELECT
 
-    c.customer_id,
+    t1.customer_id,
 
     DATEDIFF(
         DAY,
-        MAX(o.order_date),
+        MAX(t2.order_date),
         '2025-12-31'
     ) AS recency,
 
-    COUNT(DISTINCT o.order_id) AS frequency,
+    COUNT(DISTINCT t2.order_id) AS frequency,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
     ) AS monetary
 
-FROM clients c
+FROM clients t1
 
-INNER JOIN orders o
-    ON c.customer_id = o.customer_id
+INNER JOIN orders t2
+    ON t1.customer_id = t2.customer_id
 
-INNER JOIN order_items oi
-    ON o.order_id = oi.order_id
+INNER JOIN order_items t3
+    ON t2.order_id = t3.order_id
 
-WHERE o.order_status = 'Concluído'
+WHERE t2.order_status = 'Concluído'
 
 GROUP BY
-    c.customer_id;
+    t1.customer_id;
 
 
 -- ============================================================
@@ -277,26 +277,26 @@ GROUP BY
 WITH customer_revenue AS (
 
     SELECT
-        c.customer_id,
+        t1.customer_id,
 
         SUM(
-            oi.quantity
-            * oi.unit_price
-            * (1 - oi.discount)
+            t3.quantity
+            * t3.unit_price
+            * (1 - t3.discount)
         ) AS revenue
 
-    FROM clients c
+    FROM clients t1
 
-    INNER JOIN orders o
-        ON c.customer_id = o.customer_id
+    INNER JOIN orders t2
+        ON t1.customer_id = t2.customer_id
 
-    INNER JOIN order_items oi
-        ON o.order_id = oi.order_id
+    INNER JOIN order_items t3
+        ON t2.order_id = t3.order_id
 
-    WHERE o.order_status = 'Concluído'
+    WHERE t2.order_status = 'Concluído'
 
     GROUP BY
-        c.customer_id
+        t1.customer_id
 ),
 
 ranked AS (
@@ -319,21 +319,21 @@ total AS (
 
 SELECT
 
-    r.customer_id,
-    r.revenue,
-    r.customer_rank,
+    t5.customer_id,
+    t5.revenue,
+    t5.customer_rank,
 
-    r.revenue / t.total_revenue
+    t5.revenue / t6.total_revenue
         AS revenue_share
 
-FROM ranked r
+FROM ranked t5
 
-CROSS JOIN total t
+CROSS JOIN total t6
 
-WHERE r.customer_rank <= 10
+WHERE t5.customer_rank <= 10
 
 ORDER BY
-    r.customer_rank;
+    t5.customer_rank;
 
 
 -- ============================================================
@@ -342,25 +342,25 @@ ORDER BY
 
 SELECT
 
-    YEAR(o.order_date) AS year,
-    MONTH(o.order_date) AS month,
+    YEAR(t2.order_date) AS year,
+    MONTH(t2.order_date) AS month,
 
     SUM(
-        oi.quantity
-        * oi.unit_price
-        * (1 - oi.discount)
+        t3.quantity
+        * t3.unit_price
+        * (1 - t3.discount)
     ) AS revenue
 
-FROM orders o
+FROM orders t2
 
-INNER JOIN order_items oi
-    ON o.order_id = oi.order_id
+INNER JOIN order_items t3
+    ON t2.order_id = t3.order_id
 
-WHERE o.order_status = 'Concluído'
+WHERE t2.order_status = 'Concluído'
 
 GROUP BY
-    YEAR(o.order_date),
-    MONTH(o.order_date)
+    YEAR(t2.order_date),
+    MONTH(t2.order_date)
 
 ORDER BY
     year,
@@ -375,25 +375,25 @@ WITH order_revenue AS (
 
     SELECT
 
-        o.order_id,
-        o.customer_id,
+        t2.order_id,
+        t2.customer_id,
 
         SUM(
-            oi.quantity
-            * oi.unit_price
-            * (1 - oi.discount)
+            t3.quantity
+            * t3.unit_price
+            * (1 - t3.discount)
         ) AS order_revenue
 
-    FROM orders o
+    FROM orders t2
 
-    INNER JOIN order_items oi
-        ON o.order_id = oi.order_id
+    INNER JOIN order_items t3
+        ON t2.order_id = t3.order_id
 
-    WHERE o.order_status = 'Concluído'
+    WHERE t2.order_status = 'Concluído'
 
     GROUP BY
-        o.order_id,
-        o.customer_id
+        t2.order_id,
+        t2.customer_id
 )
 
 SELECT
